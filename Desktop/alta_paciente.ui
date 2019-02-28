@@ -602,6 +602,28 @@ border-radius: 3px;</string>
        <normaloff>Icon/trash.png</normaloff>Icon/trash.png</iconset>
      </property>
     </widget>
+    <widget class="QPushButton" name="button_actualizar">
+     <property name="geometry">
+      <rect>
+       <x>160</x>
+       <y>460</y>
+       <width>181</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(131, 131, 255);
+color: rgb(255, 255, 255);
+border-radius: 3px;</string>
+     </property>
+     <property name="text">
+      <string>Actualizar</string>
+     </property>
+     <property name="icon">
+      <iconset>
+       <normaloff>Icon/save.png</normaloff>Icon/save.png</iconset>
+     </property>
+    </widget>
     <zorder>frame</zorder>
     <zorder>pushButton</zorder>
     <zorder>button_volver</zorder>
@@ -616,6 +638,7 @@ border-radius: 3px;</string>
     <zorder>button_foto</zorder>
     <zorder>button_guardar</zorder>
     <zorder>button_eliminar</zorder>
+    <zorder>button_actualizar</zorder>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">

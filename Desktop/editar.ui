@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>331</width>
-    <height>400</height>
+    <height>404</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -216,10 +216,21 @@
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">background-color: rgb(69, 198, 88);</string>
+      <string notr="true">background-color: rgb(69, 198, 88);
+border-radius: 15px;</string>
      </property>
      <property name="text">
       <string/>
+     </property>
+     <property name="icon">
+      <iconset>
+       <normaloff>Icon/marcar.png</normaloff>Icon/marcar.png</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>20</width>
+       <height>20</height>
+      </size>
      </property>
     </widget>
     <widget class="QPushButton" name="buttonCancel">
@@ -232,10 +243,27 @@
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">background-color: rgb(206, 69, 60);</string>
+      <string notr="true">background-color: rgb(206, 69, 60);
+border-radius: 15px;</string>
      </property>
      <property name="text">
       <string/>
+     </property>
+     <property name="icon">
+      <iconset>
+       <normaloff>Icon/cross.png</normaloff>Icon/cross.png</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>20</width>
+       <height>20</height>
+      </size>
+     </property>
+     <property name="autoDefault">
+      <bool>false</bool>
+     </property>
+     <property name="flat">
+      <bool>false</bool>
      </property>
     </widget>
     <widget class="QTextEdit" name="textComentario">
