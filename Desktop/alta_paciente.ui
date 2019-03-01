@@ -624,6 +624,19 @@ border-radius: 3px;</string>
        <normaloff>Icon/save.png</normaloff>Icon/save.png</iconset>
      </property>
     </widget>
+    <widget class="QLabel" name="label_foto">
+     <property name="geometry">
+      <rect>
+       <x>610</x>
+       <y>30</y>
+       <width>121</width>
+       <height>121</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
     <zorder>frame</zorder>
     <zorder>pushButton</zorder>
     <zorder>button_volver</zorder>
@@ -639,6 +652,7 @@ border-radius: 3px;</string>
     <zorder>button_guardar</zorder>
     <zorder>button_eliminar</zorder>
     <zorder>button_actualizar</zorder>
+    <zorder>label_foto</zorder>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">

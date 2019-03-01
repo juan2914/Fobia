@@ -2,9 +2,8 @@
 
 """The user interface for our app"""
 
-import os,sys
+import os,sys, shutil
 import pymysql
-from email.mime.text import MIMEText
 from smtplib import SMTP
 import smtplib
 from email.mime.text import MIMEText
@@ -15,12 +14,19 @@ from PyQt4 import QtCore, QtGui, uic
 from PyQt4.QtGui import *
 from PyQt4.QtCore import *
 from validate_email import validate_email
-import os, platform, logging
+import platform, logging
 IDUSER = 0
 NPAC =""
 NUSER = ""
 IDPAC = 0
 IDSESSION = 0
+DIRPHOTOS = os.getcwd()+"\\ProfilePictures"
+FOTOPATH = DIRPHOTOS
+
+if os.path.exists(DIRPHOTOS):
+    pass
+else:
+    os.mkdir("ProfilePictures")  
 
 try:
     _fromUtf8 = QtCore.QString.fromUtf8
@@ -352,10 +358,39 @@ class AltaPaciente(QMainWindow):
         self.label_6.hide()
         self.line_password_2.hide()
         self.label_9.hide()
+        self.label_foto.hide()
         self.button_eliminar.hide()
         self.button_volver.clicked.connect(self.regresar)
         self.button_guardar.clicked.connect(self.guardar)
+        self.button_foto.clicked.connect(self.seleccionarFoto)
 
+
+    def seleccionarFoto(self):
+        global FOTOPATH
+        try:
+            self.fileDialog = QtGui.QFileDialog(self)
+            self.fileDialog.exec_()
+            file = self.fileDialog.selectedFiles()[0]
+            name = os.path.basename(file)
+            shutil.copy(file, DIRPHOTOS)
+            nfoto = str(DIRPHOTOS+"\\{}.jpg".format(IDUSER))
+            print("&&&",nfoto)
+            try:
+                os.rename (DIRPHOTOS+"\\"+name,DIRPHOTOS+"\\{}.jpg".format(IDUSER))
+            except Exception as e:
+                print(e)
+                pass            
+            FOTOPATH = str(file)
+            print("archivo",file)
+            pixmap = QPixmap(nfoto)
+            self.label_foto.setPixmap(pixmap)
+            #
+            self.label_foto.show()
+        except Exception as e:
+            print (e)
+        
+
+         
     def cajaTexto(self, texto, botones):
         msgBox = QtGui.QMessageBox( self )
         msgBox.setIcon( QtGui.QMessageBox.Information )
@@ -588,6 +623,7 @@ class AltaPsico(QMainWindow):
         self.parent().close()
         self.parent().show()
         self.close()
+print(os.path.dirname(os.path.abspath(__file__)))
 app = QApplication(sys.argv)
 main = Login()
 main.show()
