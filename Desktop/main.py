@@ -443,17 +443,19 @@ class LecturaFrecuencia(QMainWindow):
             pdf.add_page()
             pdf.set_font("Arial", size=12)
             pdf.cell(200, 10, txt="Welcome to Python!", ln=1, align="C")
-            pdf.output(dest = (str(DIRREPORT)+"\\"+str(PDFNAME)))
+            pdf.output(name = str(DIRREPORT)+"\\"+str(PDFNAME), dest = 'F')
 
             self.cajaTexto("Monitoreo Terminado",1)
         else:
             print("Otro")
     def guardar(self):
         try:
-            query = "INSERT INTO ESCENARIO(IdEscenario,IdPaciente, Reporte) VALUES(0,'"+str(IDPAC)+"','"+str(DIRREPORT)+"\\"+str(PDFNAME)+"')"
+            query = "INSERT INTO escenario(IdEscenario,IdPaciente, Reporte) VALUES(0,'"+str(IDPAC)+"','"+str(DIRREPORT)+"\\"+str(PDFNAME)+"')"
             print("Query-_-",query)
             cursor, conexion = CreateConexion()
             cursor.execute(query)
+            conexion.commit()
+            conexion.close()
             self.cajaTexto("Monitoreo guardado",1)
         except Exception as e:
             print(e)
