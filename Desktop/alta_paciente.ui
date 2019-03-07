@@ -190,36 +190,6 @@ border-radius: 10px;</string>
       <number>20</number>
      </property>
     </widget>
-    <widget class="QPushButton" name="button_foto">
-     <property name="geometry">
-      <rect>
-       <x>610</x>
-       <y>30</y>
-       <width>121</width>
-       <height>121</height>
-      </rect>
-     </property>
-     <property name="cursor">
-      <cursorShape>PointingHandCursor</cursorShape>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">border-radius: 60px;
-border:1px solid black;</string>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-     <property name="icon">
-      <iconset>
-       <normaloff>Icon/user.png</normaloff>Icon/user.png</iconset>
-     </property>
-     <property name="iconSize">
-      <size>
-       <width>80</width>
-       <height>80</height>
-      </size>
-     </property>
-    </widget>
     <widget class="QPushButton" name="button_guardar">
      <property name="geometry">
       <rect>
@@ -252,7 +222,7 @@ border-radius: 3px;</string>
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">border: 1px solid gray;</string>
+      <string notr="true"/>
      </property>
      <property name="frameShape">
       <enum>QFrame::StyledPanel</enum>
@@ -559,6 +529,45 @@ border-radius: 3px;</string>
        </rect>
       </property>
      </widget>
+     <widget class="QPushButton" name="button_foto">
+      <property name="geometry">
+       <rect>
+        <x>585</x>
+        <y>60</y>
+        <width>111</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 8pt &quot;MS Shell Dlg 2&quot;;</string>
+      </property>
+      <property name="text">
+       <string>Seleccionar Foto</string>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>80</width>
+        <height>80</height>
+       </size>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineFoto">
+      <property name="geometry">
+       <rect>
+        <x>570</x>
+        <y>40</y>
+        <width>131</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border: 1px solid gray;
+font: 8pt &quot;MS Shell Dlg 2&quot;;</string>
+      </property>
+     </widget>
      <zorder>label_6</zorder>
      <zorder>line_edad</zorder>
      <zorder>line_especialidad</zorder>
@@ -579,6 +588,8 @@ border-radius: 3px;</string>
      <zorder>label_13</zorder>
      <zorder>label_14</zorder>
      <zorder>text_comentario</zorder>
+     <zorder>button_foto</zorder>
+     <zorder>lineFoto</zorder>
     </widget>
     <widget class="QPushButton" name="button_eliminar">
      <property name="geometry">
@@ -627,11 +638,14 @@ border-radius: 3px;</string>
     <widget class="QLabel" name="label_foto">
      <property name="geometry">
       <rect>
-       <x>610</x>
-       <y>30</y>
-       <width>121</width>
-       <height>121</height>
+       <x>620</x>
+       <y>40</y>
+       <width>101</width>
+       <height>111</height>
       </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 1px solid gray;</string>
      </property>
      <property name="text">
       <string/>
@@ -648,7 +662,6 @@ border-radius: 3px;</string>
     <zorder>line_app</zorder>
     <zorder>line_domicilio</zorder>
     <zorder>line_telefono</zorder>
-    <zorder>button_foto</zorder>
     <zorder>button_guardar</zorder>
     <zorder>button_eliminar</zorder>
     <zorder>button_actualizar</zorder>

@@ -240,40 +240,11 @@ border-radius:25px;</string>
       </property>
      </widget>
     </widget>
-    <widget class="QPushButton" name="button_foto">
-     <property name="geometry">
-      <rect>
-       <x>560</x>
-       <y>70</y>
-       <width>151</width>
-       <height>151</height>
-      </rect>
-     </property>
-     <property name="cursor">
-      <cursorShape>PointingHandCursor</cursorShape>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">border: 1px solid gray;</string>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-     <property name="icon">
-      <iconset>
-       <normaloff>Icon/user.png</normaloff>Icon/user.png</iconset>
-     </property>
-     <property name="iconSize">
-      <size>
-       <width>120</width>
-       <height>120</height>
-      </size>
-     </property>
-    </widget>
     <widget class="QListWidget" name="lista_escenarios">
      <property name="geometry">
       <rect>
        <x>20</x>
-       <y>280</y>
+       <y>260</y>
        <width>691</width>
        <height>251</height>
       </rect>
@@ -281,68 +252,12 @@ border-radius:25px;</string>
      <property name="cursor" stdset="0">
       <cursorShape>PointingHandCursor</cursorShape>
      </property>
-     <item>
-      <property name="text">
-       <string>Escenario 1</string>
-      </property>
-      <property name="font">
-       <font>
-        <pointsize>16</pointsize>
-       </font>
-      </property>
-      <property name="icon">
-       <iconset>
-        <normaloff>Icon/view.png</normaloff>Icon/view.png</iconset>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string>Escenario 2</string>
-      </property>
-      <property name="font">
-       <font>
-        <pointsize>16</pointsize>
-       </font>
-      </property>
-      <property name="icon">
-       <iconset>
-        <normaloff>Icon/view.png</normaloff>Icon/view.png</iconset>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string>Escenario 3</string>
-      </property>
-      <property name="font">
-       <font>
-        <pointsize>16</pointsize>
-       </font>
-      </property>
-      <property name="icon">
-       <iconset>
-        <normaloff>Icon/view.png</normaloff>Icon/view.png</iconset>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string>Escenario 4</string>
-      </property>
-      <property name="font">
-       <font>
-        <pointsize>16</pointsize>
-       </font>
-      </property>
-      <property name="icon">
-       <iconset>
-        <normaloff>Icon/view.png</normaloff>Icon/view.png</iconset>
-      </property>
-     </item>
     </widget>
     <widget class="QPushButton" name="button_nuevoescenario">
      <property name="geometry">
       <rect>
-       <x>680</x>
-       <y>490</y>
+       <x>690</x>
+       <y>510</y>
        <width>50</width>
        <height>50</height>
       </rect>
@@ -369,26 +284,74 @@ border-radius:25px;</string>
       </size>
      </property>
     </widget>
-    <widget class="QLabel" name="label_8">
+    <widget class="QLabel" name="label_foto">
      <property name="geometry">
       <rect>
-       <x>575</x>
-       <y>200</y>
+       <x>580</x>
+       <y>60</y>
        <width>121</width>
-       <height>20</height>
+       <height>131</height>
       </rect>
      </property>
+     <property name="styleSheet">
+      <string notr="true">border: 1px solid gray;</string>
+     </property>
      <property name="text">
-      <string>Seleccionar foto de perfil</string>
+      <string/>
      </property>
     </widget>
+    <widget class="QPushButton" name="button_eliminarPaciente">
+     <property name="geometry">
+      <rect>
+       <x>750</x>
+       <y>510</y>
+       <width>50</width>
+       <height>50</height>
+      </rect>
+     </property>
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(227, 7, 10);
+border: 1px solid white;
+border-radius:25px;</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset>
+       <normaloff>Icon/trash.png</normaloff>Icon/trash.png</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>20</width>
+       <height>20</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QListWidget" name="lista_escenarios_2">
+     <property name="geometry">
+      <rect>
+       <x>710</x>
+       <y>260</y>
+       <width>33</width>
+       <height>251</height>
+      </rect>
+     </property>
+     <property name="cursor" stdset="0">
+      <cursorShape>PointingHandCursor</cursorShape>
+     </property>
+    </widget>
+    <zorder>lista_escenarios_2</zorder>
     <zorder>widget_3</zorder>
     <zorder>widget_2</zorder>
     <zorder>button_volver</zorder>
-    <zorder>button_foto</zorder>
     <zorder>lista_escenarios</zorder>
     <zorder>button_nuevoescenario</zorder>
-    <zorder>label_8</zorder>
+    <zorder>label_foto</zorder>
+    <zorder>button_eliminarPaciente</zorder>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
