@@ -11,6 +11,11 @@ import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 from fpdf import FPDF
+import random
+from matplotlib.backends.backend_qt4agg import FigureCanvasQTAgg as FigureCanvas
+from matplotlib.backends.backend_qt4agg import NavigationToolbar2QT as NavigationToolbar
+from matplotlib.figure import Figure
+import time
 
 
 import webbrowser
@@ -26,6 +31,8 @@ NUSER = ""
 PDFNAME = ""
 IDPAC = 0
 IDSESSION = 0
+START = 0
+timer = 0
 DIRREPORT = os.getcwd()+"\\Reportes"
 DIRPHOTOS = os.getcwd()+"\\ProfilePictures"
 FOTOPATH = DIRPHOTOS
@@ -93,9 +100,53 @@ class Login(QMainWindow):
         super(Login, self).__init__()
         uic.loadUi('login.ui', self)
         self.line_pass.setEchoMode(QtGui.QLineEdit.Password)
-        self.button_login.clicked.connect(self.iniciarSesion)
+        #self.button_login.clicked.connect(self.iniciarSesion)
         self.line_pass.returnPressed.connect(self.button_login.click) #Login al presionar enter en la linea de contraseña
         self.button_pass.clicked.connect(self.recuperarPass)
+
+
+        self.figure = Figure()
+
+        # this is the Canvas Widget that displays the `figure`
+        # it takes the `figure` instance as a parameter to __init__
+        self.canvas = FigureCanvas(self.figure)
+
+        # this is the Navigation widget
+        # it takes the Canvas widget and a parent
+        self.toolbar = NavigationToolbar(self.canvas, self)
+
+        # Just some button connected to `plot` method
+        self.button_login.clicked.connect(self.plot)
+
+        # set the layout
+        layout = QtGui.QVBoxLayout()
+        layout.addWidget(self.toolbar)
+        layout.addWidget(self.canvas)
+        layout.addWidget(self.button)
+        self.setLayout(layout)
+
+
+    def plot(self):
+        ''' plot some random stuff '''
+        # random data
+        data = [random.random() for i in range(10)]
+
+        # create an axis
+        ax = self.figure.add_subplot(111)
+
+        # discards the old graph
+        ax.clear()
+
+        # plot data
+        ax.plot(data, '*-')
+
+        # refresh canvas
+        self.canvas.draw()
+
+
+
+
+
 
     def recuperarPass(self):
         num, ok = QInputDialog.getText(self, 'Recuperar contraseña', 'Ingresa tu numero celular:')
@@ -304,12 +355,12 @@ class DetallePaciente(QMainWindow):
         idUser = str(IDUSER)
         icon=QtGui.QIcon("../Icon/view.png")
         self.lista_escenarios.clear()
-        query = "SELECT * FROM paciente WHERE idUser = '"+idUser +"'"
+        query = "SELECT * FROM escenario WHERE IdPaciente = '"+str(IDPAC) +"'"
         cursor, conexion = CreateConexion()
         cursor.execute(query)
         registro = cursor.fetchall()
-        for i in registro:
-            self.lista_escenarios.addItem("{} {} {}".format(i[1], i[2], i[3]))
+        for i in range(0,len(registro)):
+            self.lista_escenarios.addItem("Escenario: "+str(i+1) )
         for i in range(0,len(registro)):
             self.lista_escenarios.item(i).setIcon(icon)
 
@@ -317,7 +368,7 @@ class DetallePaciente(QMainWindow):
         idUser = str(IDUSER)
         icon=QtGui.QIcon("../Icon/garbage.png")
         self.lista_escenarios_2.clear()
-        query = "SELECT * FROM paciente WHERE idUser = '"+idUser +"'"
+        query = "SELECT * FROM escenario WHERE IdPaciente = '"+str(IDPAC) +"'"
         cursor, conexion = CreateConexion()
         cursor.execute(query)
         registro = cursor.fetchall()
@@ -412,16 +463,32 @@ class LecturaFrecuencia(QMainWindow):
     def __init__(self, parent):
         super(LecturaFrecuencia, self).__init__(parent)
         uic.loadUi('frecuencia.ui', self)
+        global timer
+        
+        self.button_terminar.setEnabled(False)
         self.button_volver.clicked.connect(self.regresar)
-        self.button_terminar.clicked.connect(self.terminar_monitoreo)
+        
         self.button_guardar.clicked.connect(self.guardar)
-        self.button_iniciar.clicked.connect(self.iniciarLectura)
+        #self.button_iniciar.clicked.connect(self.iniciarLectura)
+        self.iniciarLectura()
+
+    @QtCore.pyqtSlot()
+    def processing(self):
+        pqrst = random.randint(55,101)
+        self.pqrst.setText("{}".format(pqrst))
 
     def iniciarLectura(self):
-        print("Aqui se comenzaran a guardar los datos y a generar la grafica de pulso cardiaco")
-        self.frecuencia_grafica.hide()
+        global timer
+        timer = QtCore.QTimer(
+            self,
+            interval=1000,
+            timeout=self.processing
+        )
+        self.button_iniciar.clicked.connect(timer.start)
+        if timer.start:
+            self.button_terminar.setEnabled(True)
+        self.button_terminar.clicked.connect(timer.stop)
 
-    
     def cajaTexto(self, texto, botones):
         msgBox = QtGui.QMessageBox( self )
         msgBox.setIcon( QtGui.QMessageBox.Information )
@@ -433,32 +500,47 @@ class LecturaFrecuencia(QMainWindow):
             msgBox.addButton(QtGui.QMessageBox.Ok)
         return msgBox.exec_()
     
-    def terminar_monitoreo(self):
+    def terminar_monitoreo(self ):
         x = datetime.datetime.now()
         global PDFNAME
         mess = self.cajaTexto("¿Esta seguro que desea detener el monitoreo?", 2)
         if mess == QtGui.QMessageBox.Yes:
+            
             PDFNAME = str(x.hour) + str(x.minute) + str(x.second) +"reporte.pdf"
             pdf = FPDF()
             pdf.add_page()
             pdf.set_font("Arial", size=12)
             pdf.cell(200, 10, txt="Welcome to Python!", ln=1, align="C")
             pdf.output(name = str(DIRREPORT)+"\\"+str(PDFNAME), dest = 'F')
-
             self.cajaTexto("Monitoreo Terminado",1)
         else:
             print("Otro")
     def guardar(self):
-        try:
-            query = "INSERT INTO escenario(IdEscenario,IdPaciente, Reporte) VALUES(0,'"+str(IDPAC)+"','"+str(DIRREPORT)+"\\"+str(PDFNAME)+"')"
+        x = datetime.datetime.now()
+        global PDFNAME
+        mess = self.cajaTexto("¿Esta seguro que desea terminar el monitoreo?", 2)
+        if mess == QtGui.QMessageBox.Yes:
+            
+            PDFNAME = str(x.hour) + str(x.minute) + str(x.second) +"reporte.pdf"
+            pdf = FPDF()
+            pdf.add_page()
+            pdf.set_font("Arial", size=12)
+            pdf.cell(200, 10, txt="Welcome to Python!", ln=1, align="C")
+            pdf.output(name = str(DIRREPORT)+"\\"+str(PDFNAME), dest = 'F')
+            file = str(DIRREPORT)+"\\"+str(PDFNAME)
+            file = file.replace('\\', '\\\\')
+            self.cajaTexto("Monitoreo Terminado",1)
+            query = "INSERT INTO escenario(IdEscenario,IdPaciente, Reporte) VALUES(0,'"+str(IDPAC)+"','"+str(file)+"')"
             print("Query-_-",query)
             cursor, conexion = CreateConexion()
             cursor.execute(query)
             conexion.commit()
             conexion.close()
             self.cajaTexto("Monitoreo guardado",1)
-        except Exception as e:
-            print(e)
+            self.button_guardar.setEnabled(False)
+        else:
+            print("Otro")
+        
         
 
     def regresar(self):
@@ -658,7 +740,6 @@ class Psicologo(QMainWindow):
         editarPerfil.cargarDatos()
         editarPerfil.cargarFoto()
 
-
     def regresar(self):
         self.parent().show()
         self.close()
@@ -850,7 +931,7 @@ class AltaPsico(QMainWindow):
         self.parent().close()
         self.parent().show()
         self.close()
-print("hello")
+
 app = QApplication(sys.argv)
 main = Login()
 main.show()
