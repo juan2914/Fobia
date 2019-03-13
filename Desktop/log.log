@@ -1,78 +1,78 @@
-2019-03-11 15:22:43,906 : DEBUG : Comienza el programa
-2019-03-11 15:22:43,937 : DEBUG : UI version is 4.0
-2019-03-11 15:22:43,937 : DEBUG : uiname is MainWindow
-2019-03-11 15:22:43,937 : DEBUG : toplevel widget is Login
-2019-03-11 15:22:43,937 : DEBUG : setting property geometry
-2019-03-11 15:22:43,937 : DEBUG : setting property windowTitle
-2019-03-11 15:22:43,937 : DEBUG : push Login MainWindow
-2019-03-11 15:22:43,937 : DEBUG : push QWidget centralwidget
-2019-03-11 15:22:43,937 : DEBUG : setting property geometry
-2019-03-11 15:22:43,937 : DEBUG : setting property maximumSize
-2019-03-11 15:22:43,937 : DEBUG : setting property styleSheet
-2019-03-11 15:22:43,937 : DEBUG : push QWidget widget
-2019-03-11 15:22:43,937 : DEBUG : setting property geometry
-2019-03-11 15:22:43,937 : DEBUG : setting property font
-2019-03-11 15:22:43,937 : DEBUG : setting property styleSheet
-2019-03-11 15:22:43,937 : DEBUG : setting property inputMethodHints
-2019-03-11 15:22:43,937 : DEBUG : push QWidget widget_2
-2019-03-11 15:22:43,937 : DEBUG : setting property geometry
-2019-03-11 15:22:43,937 : DEBUG : setting property styleSheet
-2019-03-11 15:22:43,937 : DEBUG : setting property inputMethodHints
-2019-03-11 15:22:43,937 : DEBUG : setting property text
-2019-03-11 15:22:43,937 : DEBUG : setting property maxLength
-2019-03-11 15:22:43,937 : DEBUG : setting property placeholderText
-2019-03-11 15:22:43,937 : DEBUG : push QLineEdit line_usuario
-2019-03-11 15:22:43,937 : DEBUG : pop widget QLineEdit line_usuario
-2019-03-11 15:22:43,937 : DEBUG : new topwidget <PyQt4.QtGui.QWidget object at 0x0000000005AA2E58>
-2019-03-11 15:22:43,937 : DEBUG : setting property geometry
-2019-03-11 15:22:43,937 : DEBUG : setting property whatsThis
-2019-03-11 15:22:43,937 : DEBUG : setting property inputMask
-2019-03-11 15:22:43,937 : DEBUG : setting property text
-2019-03-11 15:22:43,937 : DEBUG : setting property maxLength
-2019-03-11 15:22:43,953 : DEBUG : push QLineEdit line_pass
-2019-03-11 15:22:43,953 : DEBUG : pop widget QLineEdit line_pass
-2019-03-11 15:22:43,953 : DEBUG : new topwidget <PyQt4.QtGui.QWidget object at 0x0000000005AA2E58>
-2019-03-11 15:22:43,953 : DEBUG : setting property geometry
-2019-03-11 15:22:43,953 : DEBUG : setting property text
-2019-03-11 15:22:43,953 : DEBUG : push QLabel label
-2019-03-11 15:22:43,953 : DEBUG : pop widget QLabel label
-2019-03-11 15:22:43,953 : DEBUG : new topwidget <PyQt4.QtGui.QWidget object at 0x0000000005AA2E58>
-2019-03-11 15:22:43,953 : DEBUG : setting property geometry
-2019-03-11 15:22:43,953 : DEBUG : setting property text
-2019-03-11 15:22:43,953 : DEBUG : push QLabel label_2
-2019-03-11 15:22:43,953 : DEBUG : pop widget QLabel label_2
-2019-03-11 15:22:43,953 : DEBUG : new topwidget <PyQt4.QtGui.QWidget object at 0x0000000005AA2E58>
-2019-03-11 15:22:43,953 : DEBUG : setting property geometry
-2019-03-11 15:22:43,953 : DEBUG : setting property font
-2019-03-11 15:22:43,953 : DEBUG : setting property cursor
-2019-03-11 15:22:43,953 : DEBUG : setting property mouseTracking
-2019-03-11 15:22:43,953 : DEBUG : setting property styleSheet
-2019-03-11 15:22:43,953 : DEBUG : setting property text
-2019-03-11 15:22:43,953 : DEBUG : setting property autoDefault
-2019-03-11 15:22:43,953 : DEBUG : setting property default
-2019-03-11 15:22:43,953 : DEBUG : setting property flat
-2019-03-11 15:22:43,953 : DEBUG : push QPushButton button_pass
-2019-03-11 15:22:43,953 : DEBUG : pop widget QPushButton button_pass
-2019-03-11 15:22:43,953 : DEBUG : new topwidget <PyQt4.QtGui.QWidget object at 0x0000000005AA2E58>
-2019-03-11 15:22:43,953 : DEBUG : pop widget QWidget widget_2
-2019-03-11 15:22:43,953 : DEBUG : new topwidget <PyQt4.QtGui.QWidget object at 0x0000000005AA2D38>
-2019-03-11 15:22:43,953 : DEBUG : setting property geometry
-2019-03-11 15:22:43,953 : DEBUG : setting property cursor
-2019-03-11 15:22:43,953 : DEBUG : setting property styleSheet
-2019-03-11 15:22:43,953 : DEBUG : setting property text
-2019-03-11 15:22:43,953 : DEBUG : push QPushButton button_login
-2019-03-11 15:22:43,953 : DEBUG : pop widget QPushButton button_login
-2019-03-11 15:22:43,953 : DEBUG : new topwidget <PyQt4.QtGui.QWidget object at 0x0000000005AA2D38>
-2019-03-11 15:22:43,953 : DEBUG : pop widget QWidget widget
-2019-03-11 15:22:43,953 : DEBUG : new topwidget <PyQt4.QtGui.QWidget object at 0x0000000005AA2CA8>
-2019-03-11 15:22:43,953 : DEBUG : pop widget QWidget centralwidget
-2019-03-11 15:22:43,953 : DEBUG : new topwidget <__main__.Login object at 0x00000000039A7A68>
-2019-03-11 15:22:43,953 : DEBUG : setting property geometry
-2019-03-11 15:22:43,953 : DEBUG : push QMenuBar menubar
-2019-03-11 15:22:43,953 : DEBUG : pop widget QMenuBar menubar
-2019-03-11 15:22:43,953 : DEBUG : new topwidget <__main__.Login object at 0x00000000039A7A68>
-2019-03-11 15:22:43,953 : DEBUG : push QStatusBar statusbar
-2019-03-11 15:22:43,953 : DEBUG : pop widget QStatusBar statusbar
-2019-03-11 15:22:43,953 : DEBUG : new topwidget <__main__.Login object at 0x00000000039A7A68>
-2019-03-11 15:22:43,953 : DEBUG : pop widget Login MainWindow
-2019-03-11 15:22:43,953 : DEBUG : new topwidget None
+2019-03-13 15:03:36,993 : DEBUG : Comienza el programa
+2019-03-13 15:03:37,056 : DEBUG : UI version is 4.0
+2019-03-13 15:03:37,056 : DEBUG : uiname is MainWindow
+2019-03-13 15:03:37,056 : DEBUG : toplevel widget is Login
+2019-03-13 15:03:37,056 : DEBUG : setting property geometry
+2019-03-13 15:03:37,056 : DEBUG : setting property windowTitle
+2019-03-13 15:03:37,056 : DEBUG : push Login MainWindow
+2019-03-13 15:03:37,056 : DEBUG : push QWidget centralwidget
+2019-03-13 15:03:37,056 : DEBUG : setting property geometry
+2019-03-13 15:03:37,056 : DEBUG : setting property maximumSize
+2019-03-13 15:03:37,056 : DEBUG : setting property styleSheet
+2019-03-13 15:03:37,056 : DEBUG : push QWidget widget
+2019-03-13 15:03:37,056 : DEBUG : setting property geometry
+2019-03-13 15:03:37,056 : DEBUG : setting property font
+2019-03-13 15:03:37,056 : DEBUG : setting property styleSheet
+2019-03-13 15:03:37,056 : DEBUG : setting property inputMethodHints
+2019-03-13 15:03:37,056 : DEBUG : push QWidget widget_2
+2019-03-13 15:03:37,071 : DEBUG : setting property geometry
+2019-03-13 15:03:37,071 : DEBUG : setting property styleSheet
+2019-03-13 15:03:37,071 : DEBUG : setting property inputMethodHints
+2019-03-13 15:03:37,071 : DEBUG : setting property text
+2019-03-13 15:03:37,071 : DEBUG : setting property maxLength
+2019-03-13 15:03:37,071 : DEBUG : setting property placeholderText
+2019-03-13 15:03:37,071 : DEBUG : push QLineEdit line_usuario
+2019-03-13 15:03:37,071 : DEBUG : pop widget QLineEdit line_usuario
+2019-03-13 15:03:37,071 : DEBUG : new topwidget <PyQt4.QtGui.QWidget object at 0x05EF25D0>
+2019-03-13 15:03:37,071 : DEBUG : setting property geometry
+2019-03-13 15:03:37,071 : DEBUG : setting property whatsThis
+2019-03-13 15:03:37,071 : DEBUG : setting property inputMask
+2019-03-13 15:03:37,071 : DEBUG : setting property text
+2019-03-13 15:03:37,071 : DEBUG : setting property maxLength
+2019-03-13 15:03:37,071 : DEBUG : push QLineEdit line_pass
+2019-03-13 15:03:37,071 : DEBUG : pop widget QLineEdit line_pass
+2019-03-13 15:03:37,071 : DEBUG : new topwidget <PyQt4.QtGui.QWidget object at 0x05EF25D0>
+2019-03-13 15:03:37,071 : DEBUG : setting property geometry
+2019-03-13 15:03:37,071 : DEBUG : setting property text
+2019-03-13 15:03:37,071 : DEBUG : push QLabel label
+2019-03-13 15:03:37,071 : DEBUG : pop widget QLabel label
+2019-03-13 15:03:37,071 : DEBUG : new topwidget <PyQt4.QtGui.QWidget object at 0x05EF25D0>
+2019-03-13 15:03:37,071 : DEBUG : setting property geometry
+2019-03-13 15:03:37,071 : DEBUG : setting property text
+2019-03-13 15:03:37,071 : DEBUG : push QLabel label_2
+2019-03-13 15:03:37,071 : DEBUG : pop widget QLabel label_2
+2019-03-13 15:03:37,071 : DEBUG : new topwidget <PyQt4.QtGui.QWidget object at 0x05EF25D0>
+2019-03-13 15:03:37,071 : DEBUG : setting property geometry
+2019-03-13 15:03:37,071 : DEBUG : setting property font
+2019-03-13 15:03:37,071 : DEBUG : setting property cursor
+2019-03-13 15:03:37,071 : DEBUG : setting property mouseTracking
+2019-03-13 15:03:37,071 : DEBUG : setting property styleSheet
+2019-03-13 15:03:37,071 : DEBUG : setting property text
+2019-03-13 15:03:37,071 : DEBUG : setting property autoDefault
+2019-03-13 15:03:37,071 : DEBUG : setting property default
+2019-03-13 15:03:37,071 : DEBUG : setting property flat
+2019-03-13 15:03:37,071 : DEBUG : push QPushButton button_pass
+2019-03-13 15:03:37,071 : DEBUG : pop widget QPushButton button_pass
+2019-03-13 15:03:37,071 : DEBUG : new topwidget <PyQt4.QtGui.QWidget object at 0x05EF25D0>
+2019-03-13 15:03:37,071 : DEBUG : pop widget QWidget widget_2
+2019-03-13 15:03:37,071 : DEBUG : new topwidget <PyQt4.QtGui.QWidget object at 0x05EF2D50>
+2019-03-13 15:03:37,071 : DEBUG : setting property geometry
+2019-03-13 15:03:37,071 : DEBUG : setting property cursor
+2019-03-13 15:03:37,071 : DEBUG : setting property styleSheet
+2019-03-13 15:03:37,071 : DEBUG : setting property text
+2019-03-13 15:03:37,071 : DEBUG : push QPushButton button_login
+2019-03-13 15:03:37,071 : DEBUG : pop widget QPushButton button_login
+2019-03-13 15:03:37,071 : DEBUG : new topwidget <PyQt4.QtGui.QWidget object at 0x05EF2D50>
+2019-03-13 15:03:37,071 : DEBUG : pop widget QWidget widget
+2019-03-13 15:03:37,071 : DEBUG : new topwidget <PyQt4.QtGui.QWidget object at 0x05EF2620>
+2019-03-13 15:03:37,071 : DEBUG : pop widget QWidget centralwidget
+2019-03-13 15:03:37,071 : DEBUG : new topwidget <__main__.Login object at 0x05EF22B0>
+2019-03-13 15:03:37,071 : DEBUG : setting property geometry
+2019-03-13 15:03:37,071 : DEBUG : push QMenuBar menubar
+2019-03-13 15:03:37,071 : DEBUG : pop widget QMenuBar menubar
+2019-03-13 15:03:37,071 : DEBUG : new topwidget <__main__.Login object at 0x05EF22B0>
+2019-03-13 15:03:37,071 : DEBUG : push QStatusBar statusbar
+2019-03-13 15:03:37,071 : DEBUG : pop widget QStatusBar statusbar
+2019-03-13 15:03:37,071 : DEBUG : new topwidget <__main__.Login object at 0x05EF22B0>
+2019-03-13 15:03:37,071 : DEBUG : pop widget Login MainWindow
+2019-03-13 15:03:37,071 : DEBUG : new topwidget None

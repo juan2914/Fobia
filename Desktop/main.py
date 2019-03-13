@@ -122,7 +122,6 @@ class Login(QMainWindow):
         layout = QtGui.QVBoxLayout()
         layout.addWidget(self.toolbar)
         layout.addWidget(self.canvas)
-        layout.addWidget(self.button)
         self.setLayout(layout)
 
 
